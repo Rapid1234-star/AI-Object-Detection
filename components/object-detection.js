@@ -4,11 +4,13 @@ import Webcam from "react-webcam";
 import { load as cocoSSDLoad } from "@tensorflow-models/coco-ssd";
 import * as tf from "@tensorflow/tfjs-core";
 import "@tensorflow/tfjs-backend-webgl";
+import renderPredictions from "../components/utils/render-prediction";
 
 
 let detectInterval;
 function ObjectDetection() {
   const webcamref = useRef(null);
+  const canvasRef = useRef(null);
   const [loading, setLoading] = useState(true);
 
   const runCoco = async () => {
@@ -19,8 +21,27 @@ function ObjectDetection() {
 
       detectInterval = setInterval(() => {
         runObjectDetection(model);
-      }, 20);
+      }, 10);
   };
+
+  async function runObjectDetection(model) {
+    if (
+      canvasRef.current !== null &&
+      webcamref.current !== null &&
+      webcamref.current.video.readyState === 4
+    ) {
+      canvasRef.current.width = webcamref.current.video.videoWidth;
+      canvasRef.current.height = webcamref.current.video.videoHeight;
+      // find objects in the frame
+      const detectedObjects = await model.detect(
+        webcamref.current.video,
+        undefined,
+        0.5
+      );
+      const context= canvasRef.current.getContext("2d");
+      renderPredictions(detectedObjects, context);
+    }
+  }
   function showVideo() {
     if (
       webcamref.current !== null &&
@@ -54,6 +75,7 @@ function ObjectDetection() {
             muted
           />
           {/*Canvas */}
+          <canvas ref={canvasRef} className="absolute top-0 left-0 z-50 w-full lg:h-[720px]"/>
         </div>
       )}
     </div>
