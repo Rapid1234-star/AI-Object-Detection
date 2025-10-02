@@ -6,7 +6,7 @@ export default function Home() {
     <main className=" bg-black flex min-h-screen flex-col items-center  p-12">
       <h1 
       className="gradient-title text-4xl font-extrabold md:text-6xl lg:text-8xl lg:px8 tracking-tighter md:text-center md:px8 "
-      >AI Object Detection</h1>
+      >AI Detection</h1>
       <ObjectDetection />
     </main>
   );
