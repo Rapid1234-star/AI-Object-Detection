@@ -120,7 +120,7 @@ Optional environment variables may be added if extending functionality (e.g., cu
 
 ## 👥 Contributors
 
-- [Add contributor names here]
+- Don't have any yet 🥲
 
 ---
 
