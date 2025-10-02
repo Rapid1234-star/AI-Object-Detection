@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+AI Object Detection
+📌 Introduction
 
-## Getting Started
+AI Object Detection is a web-based application built with Next.js that performs real-time object detection in images or video streams using the pre-trained COCO-SSD model.
 
-First, run the development server:
+This project demonstrates how to integrate AI-powered vision models directly into a modern web app, making it accessible through a simple browser interface.
 
-```bash
+📂 Table of Contents
+
+Features
+
+Installation
+
+Usage
+
+Project Structure
+
+Dependencies
+
+Configuration
+
+Examples
+
+Troubleshooting
+
+Contributors
+
+License
+
+✨ Features
+
+🚀 Built with Next.js (React) for modern web development.
+
+🎯 Uses COCO-SSD pre-trained AI model for object detection.
+
+📷 Supports real-time detection via webcam or uploaded images.
+
+⚡ Optimized rendering of detection boxes & labels.
+
+🌐 Runs entirely in the browser — no backend server required.
+
+⚙️ Installation
+
+Clone the repository
+
+git clone https://github.com/your-username/AI-Object-Detection.git
+cd AI-Object-Detection
+
+
+Install dependencies
+
+npm install
+
+
+Start the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open your browser at http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+▶️ Usage
 
-## Learn More
+Upload an image or enable your webcam.
 
-To learn more about Next.js, take a look at the following resources:
+The app will automatically run the COCO-SSD model on the input.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Detected objects will be highlighted with bounding boxes and labels.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📂 Project Structure
+AI-Object-Detection/
+├── app/                  # Next.js app directory
+│   ├── layout.js
+│   ├── page.js
+│   └── globals.css
+├── components/           # Core React components
+│   ├── object-detection.js
+│   └── utils/
+│       └── render-prediction.js
+├── public/               # Static assets
+├── package.json          # Dependencies & scripts
+└── next.config.mjs       # Next.js configuration
 
-## Deploy on Vercel
+📦 Dependencies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js
+ – React framework
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+React
+ – UI library
+
+COCO-SSD
+ – Pre-trained object detection model
+
+ESLint, PostCSS – Development tools
+
+🔧 Configuration
+
+No special configuration required.
+Optional environment variables may be added if extending functionality (e.g., custom model URLs).
+
+🖼️ Examples
+
+Object Detection in Action:
+
+Person, car, dog, etc. detected in real-time.
+(Screenshots or GIFs can be added here.)
+
+🛠️ Troubleshooting
+
+Ensure Node.js ≥ 16 is installed.
+
+If detection is slow, check browser GPU acceleration.
+
+Webcam not working? → Verify browser permissions.
+
+👥 Contributors
+
+Your Name – Project creator
+
+Contributions welcome via pull requests!
+
+📜 License
+
+This project is licensed under the MIT License
